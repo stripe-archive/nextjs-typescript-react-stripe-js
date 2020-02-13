@@ -13,6 +13,24 @@ This is a full-stack TypeScript example using:
   - Next.js [API routes](https://nextjs.org/docs/api-routes/introduction)
   - [stripe-node with TypeScript](https://github.com/stripe/stripe-node#usage-with-typescript)
 
+**Demo**
+
+See the sample [live](https://nextjs-typescript-react-stripe-js.now.sh/) or [fork](https://codesandbox.io/s/github/stripe-samples/nextjs-typescript-react-stripe-js) on CodeSandbox.
+
+The demo is running in test mode -- use `4242424242424242` as a test card number with any CVC + future expiration date.
+
+Use the `4000000000003220` test card number to trigger a 3D Secure challenge flow.
+
+Read more about testing on Stripe at https://stripe.com/docs/testing.
+
+<details open><summary>Checkout Demo</summary>
+<img src="./public/checkout_demo.gif" alt="A gif of the Checkout payment page." align="center">
+</details>
+
+<details><summary>Elements Demo</summary>
+<img src="./public/elements_demo.gif" alt="A gif of the custom Elements checkout page." align="center">
+</details>
+
 ### Included functionality
 
 - Making `.env` variables available to next: [next.config.js](next.config.js)
@@ -117,6 +135,7 @@ now secrets add stripe_webhook_secret whsec_***
 
 As the secrets are set as env vars in the project at deploy time, we will need to redeploy our app after we made changes to the secrets.
 
-### Author
+### Authors
 
 - [@thorsten-stripe](https://twitter.com/thorwebdev)
+- [@lfades](https://twitter.com/luis_fades)
