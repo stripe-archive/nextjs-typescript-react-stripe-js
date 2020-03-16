@@ -9,8 +9,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@stripe/react-stripe-js": "^1.0.0-beta.5",
-    "@stripe/stripe-js": "^1.0.0-beta.6",
+    "@stripe/react-stripe-js": "^1.0.3",
+    "@stripe/stripe-js": "^1.1.0",
     "dotenv": "latest",
     "micro": "^9.3.4",
     "micro-cors": "^0.1.1",
