@@ -1,15 +1,13 @@
-.env
 .DS_Store
 .vscode
 
 # Node files
 node_modules/
-package-lock.json
-yarn.lock
 
 # Typescript
 dist
 
 # Next.js
 .next
-.now
+.vercel
+.env*.local
