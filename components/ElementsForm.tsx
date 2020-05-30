@@ -20,23 +20,23 @@ const CARD_OPTIONS = {
       fontSize: '16px',
       fontSmoothing: 'antialiased',
       ':-webkit-autofill': {
-        color: '#fce883'
+        color: '#fce883',
       },
       '::placeholder': {
-        color: '#6772e5'
-      }
+        color: '#6772e5',
+      },
     },
     invalid: {
       iconColor: '#ef2961',
-      color: '#ef2961'
-    }
-  }
+      color: '#ef2961',
+    },
+  },
 };
 
 const ElementsForm: React.FunctionComponent = () => {
   const [input, setInput] = useState({
     customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
-    cardholderName: ''
+    cardholderName: '',
   });
   const [payment, setPayment] = useState({ status: 'initial' });
   const [errorMessage, setErrorMessage] = useState('');
@@ -69,13 +69,13 @@ const ElementsForm: React.FunctionComponent = () => {
     }
   };
 
-  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = e =>
+  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) =>
     setInput({
       ...input,
-      [e.currentTarget.name]: e.currentTarget.value
+      [e.currentTarget.name]: e.currentTarget.value,
     });
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async e => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
     // Abort if form isn't valid
     if (!e.currentTarget.reportValidity()) return;
@@ -83,7 +83,7 @@ const ElementsForm: React.FunctionComponent = () => {
 
     // Create a PaymentIntent with the specified amount.
     const response = await fetchPostJSON('/api/payment_intents', {
-      amount: input.customDonation
+      amount: input.customDonation,
     });
     setPayment(response);
 
@@ -104,8 +104,8 @@ const ElementsForm: React.FunctionComponent = () => {
       {
         payment_method: {
           card: cardElement!,
-          billing_details: { name: input.cardholderName }
-        }
+          billing_details: { name: input.cardholderName },
+        },
       }
     );
 
@@ -143,7 +143,7 @@ const ElementsForm: React.FunctionComponent = () => {
           <div className="FormRow elements-style">
             <CardElement
               options={CARD_OPTIONS}
-              onChange={e => {
+              onChange={(e) => {
                 if (e.error) {
                   setPayment({ status: 'error' });
                   setErrorMessage(

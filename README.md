@@ -33,8 +33,9 @@ Read more about testing on Stripe at https://stripe.com/docs/testing.
 
 ### Included functionality
 
+- [Global CSS styles](https://nextjs.org/blog/next-9-2#built-in-css-support-for-global-stylesheets)
 - Making `.env` variables available to next: [next.config.js](next.config.js)
-  - **Note**: When deploying with Now you need to [add your secrets](https://zeit.co/docs/v2/serverless-functions/env-and-secrets) and specify a [now.json](/now.json) file.
+  - **Note**: When deploying with Now you need to [add your secrets](https://vercel.com/docs/v2/serverless-functions/env-and-secrets) and specify a [now.json](/now.json) file.
 - Implementation of a Layout component that loads and sets up Stripe.js and Elements for usage with SSR via `loadStripe` helper: [components/Layout.tsx](components/Layout.tsx).
 - Stripe Checkout
   - Custom Amount Donation with redirect to Stripe Checkout:
@@ -58,7 +59,7 @@ Read more about testing on Stripe at https://stripe.com/docs/testing.
 
 ### Using `create-next-app`
 
-Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
 ```bash
 npm init next-app --example with-stripe-typescript with-stripe-typescript-app
@@ -71,7 +72,7 @@ yarn create next-app --example with-stripe-typescript with-stripe-typescript-app
 Download the example:
 
 ```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-stripe-typescript
+curl https://codeload.github.com/vercel/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-stripe-typescript
 cd with-stripe-typescript
 ```
 
@@ -86,7 +87,7 @@ cp .env.example .env
 You will need a Stripe account ([register](https://dashboard.stripe.com/register)) to run this sample. Go to the Stripe [developer dashboard](https://stripe.com/docs/development#api-keys) to find your API keys and replace them in the `.env` file.
 
 ```bash
-STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>
 STRIPE_SECRET_KEY=<replace-with-your-secret-key>
 ```
 
@@ -114,9 +115,9 @@ The CLI will print a webhook secret key to the console. Set `STRIPE_WEBHOOK_SECR
 
 ### Deploy
 
-Deploy it to the cloud with [ZEIT Now](https://zeit.co/new?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
-**Note**: You must add your Stripe secrets using the ZEIT Now CLI ([Download here](https://zeit.co/download)):
+**Note**: You must add your Stripe secrets using the Vercel CLI ([Download here](https://vercel.com/download)):
 
 ```bash
 now secrets add stripe_publishable_key pk_***

@@ -1,24 +1,27 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiRequest, NextApiResponse } from 'next';
 
-import Stripe from 'stripe'
+import Stripe from 'stripe';
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   // https://github.com/stripe/stripe-node#configuration
-  apiVersion: '2019-12-03',
-})
+  apiVersion: '2020-03-02',
+});
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const id: string = req.query.id as string
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const id: string = req.query.id as string;
   try {
     if (!id.startsWith('cs_')) {
-      throw Error('Incorrect CheckoutSession ID.')
+      throw Error('Incorrect CheckoutSession ID.');
     }
     const checkout_session: Stripe.Checkout.Session = await stripe.checkout.sessions.retrieve(
       id,
       { expand: ['payment_intent'] }
-    )
+    );
 
-    res.status(200).json(checkout_session)
+    res.status(200).json(checkout_session);
   } catch (err) {
-    res.status(500).json({ statusCode: 500, message: err.message })
+    res.status(500).json({ statusCode: 500, message: err.message });
   }
 }
