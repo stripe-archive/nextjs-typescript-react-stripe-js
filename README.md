@@ -23,11 +23,15 @@ Use the `4000000000003220` test card number to trigger a 3D Secure challenge flo
 
 Read more about testing on Stripe at https://stripe.com/docs/testing.
 
-<details open><summary>Checkout Demo</summary>
+<details open><summary>Shopping Cart Checkout Demo</summary>
+<img src="./public/shopping_cart_demo.gif" alt="A gif of the Shopping Cart Checkout payment page." align="center">
+</details>
+
+<details><summary>Checkout Donations Demo</summary>
 <img src="./public/checkout_demo.gif" alt="A gif of the Checkout payment page." align="center">
 </details>
 
-<details><summary>Elements Demo</summary>
+<details><summary>Elements Donations Demo</summary>
 <img src="./public/elements_demo.gif" alt="A gif of the custom Elements checkout page." align="center">
 </details>
 
@@ -60,7 +64,7 @@ Read more about testing on Stripe at https://stripe.com/docs/testing.
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
 ```bash
-npm init next-app --example with-stripe-typescript with-stripe-typescript-app
+npx create-next-app --example with-stripe-typescript with-stripe-typescript-app
 # or
 yarn create next-app --example with-stripe-typescript with-stripe-typescript-app
 ```
