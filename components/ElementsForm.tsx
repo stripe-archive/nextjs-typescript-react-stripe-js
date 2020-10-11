@@ -159,15 +159,12 @@ const ElementsForm = () => {
         <button
           className="elements-style-background"
           type="submit"
-          disabled={
-            !['initial', 'succeeded', 'error'].includes(payment.status) ||
-            !stripe
-          }
+          disabled={!stripe}
         >
           Donate {formatAmountForDisplay(input.customDonation, config.CURRENCY)}
         </button>
       </form>
-      <PaymentStatus status={payment.status} />
+      {payment?.status && <PaymentStatus status={payment.status} />}
       <PrintObject content={payment} />
     </>
   );
