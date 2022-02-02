@@ -1,3 +1,9 @@
+> <img src="https://stripe.dev/images/badges/archived.png" width="250">
+>
+> This project is deprecated and is no longer being actively maintained.
+>
+> See [vercel/next.js/examples/with-stripe-typescript](https://github.com/vercel/next.js/tree/canary/examples/with-stripe-typescript) for an alternative sample.
+
 # Sample using Next.js, TypeScript, and react-stripe-js 🔒💸
 
 This is a full-stack TypeScript example using:
